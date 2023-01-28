@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 
@@ -5,7 +6,6 @@ import { toast } from 'react-toastify';
 import { Order } from '../../types/Order';
 import { api } from '../../utils/api';
 import { OrderModal } from '../OrderModal';
-import { Orders } from '../Orders';
 import { Board, OrdersContainer } from './styles';
 
 

@@ -16,15 +16,27 @@ export function Orders() {
 
   useEffect(() => {
     const socket = socketIo('http://localhost:3001', {
-      transports: ['websocket'],
+      transports: ['websocket']
     });
+
+    socket.on('orders@new', (order) => {
+      setOrders(prevState => prevState.concat((order)));
+    });
+
+    return () => {
+      socket.removeListener('orders@new');
+
+    };
   },[]);
+
+
 
   useEffect(()=> {
     api.get('/orders')
       .then(({data})=> {
         setOrders(data);
       });
+
   },[]);
 
   const waiting = orders.filter((order) => order.status === 'WAITING');

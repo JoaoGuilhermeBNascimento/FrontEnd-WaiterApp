@@ -136,7 +136,7 @@ export function OrderModal({visible, order, onClose, onCancelOrder, isLoading, o
             onClick={onCancelOrder}
             disabled= {isLoading}
           >
-              Concluir Pedido
+              Cancelar Pedido
           </button>
         </Actions>
 
